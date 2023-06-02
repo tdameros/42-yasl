@@ -1,0 +1,30 @@
+#!yasl
+
+{
+	%@ (2 ^ = print 2 ^ 1 -)
+	!!
+}function
+
+3
+%<
+? ("Usage : ./yasl_repeat <start_num> <value1> [ <value2> [ ...]]" print 1 exit) : !
+
+
+0:=:1 !!
+0
+%<=
+? ("<start_num> must be strictly positive" print exit 1) : !
+
+0:=:2
+2:(][):2
+2:( @( = "0" < ? ("Not a number\n" print 1 exit) : (= "9" > ? ("Not a number\n" print 1 exit)) ! # )):2
+
+1:=:0
+2 -
+2 ^ eval %+ %> ? ("the program can overflow" print exit 1) : ! 2 ^ !
+0:=:1
+!
+
+
+#
+#(1:=:0 function 1:"1":1 1:eval:1 1:+:1 "\n" print)

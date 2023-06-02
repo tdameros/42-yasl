@@ -1,0 +1,13 @@
+#!yasl
+
+1
+!=
+? ("Usage : ./yasl_interactive " print 1 exit) : !
+
+1
+@(
+    read
+    0 == ? ("\n" print exit 0)
+    eval
+    1
+)
